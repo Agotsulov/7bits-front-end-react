@@ -1,0 +1,16 @@
+*.iml
+
+.idea/
+
+maket.*
+
+elements.*
+
+node_modules/
+package-lock.json
+
+/build
+
+npm-debug.log*
+
+.DS_Store
