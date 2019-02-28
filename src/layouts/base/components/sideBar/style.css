@@ -1,0 +1,17 @@
+.side-bar {
+    width: 100%;
+    background-color: #fff;
+}
+
+.side-bar__list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.side-bar__title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #979797;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+}
