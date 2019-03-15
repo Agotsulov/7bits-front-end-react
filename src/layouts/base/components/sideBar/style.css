@@ -3,15 +3,61 @@
     background-color: #fff;
 }
 
-.side-bar__list {
+.nav-menu__list {
     list-style: none;
     padding-left: 0;
 }
 
-.side-bar__title {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #979797;
+.nav-menu__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu__link {
+    display: block;
+    padding: 8px 10px;
     font-family: Roboto, sans-serif;
+    color: #979797;
+    font-size: 18px;
+    text-decoration: none;
     font-weight: 400;
+}
+
+.nav-menu__link:hover {
+    color: #78c2f5;
+    font-weight: 500;
+}
+
+.nav-menu__link:active {
+    color: #78c2f5;
+    font-weight: 500;
+}
+
+.nav-menu__text {
+    margin-left: 20px;
+}
+
+.nav-menu__todo {
+    background: url("todo_gray.svg") no-repeat left;
+}
+
+.nav-menu__todo:active {
+    background: url("todo_blue.svg") no-repeat left;
+}
+
+.nav-menu__todo:hover {
+    background: url("todo_blue.svg") no-repeat left;
+}
+
+.nav-menu__done {
+    background: url("done_gray.svg") no-repeat left;
+}
+
+.nav-menu__done:active {
+    background: url("done_blue.svg") no-repeat left;
+}
+
+.nav-menu__done:hover {
+    background: url("done_blue.svg") no-repeat left;
 }
