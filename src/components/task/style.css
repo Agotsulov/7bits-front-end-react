@@ -5,7 +5,8 @@
     height: 45px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
     background-color: #ffffff;
-    position: relative
+    display: flex;
+    align-items: center;
 }
 
 .task__title {
@@ -13,8 +14,17 @@
     color: #303030;
     vertical-align: middle;
     margin-left: 35px;
-    position: absolute;
-    top: 14%;
-    transform: translate(0, -50%)
+}
+
+.task__button-delete {
+    width: 14px;
+    height: 14px;
+    margin-left: auto;
+    margin-right: 20px;
+    background: url("./delete.svg") no-repeat center;
+}
+
+.task__button-delete:hover {
+    background: url("./delete_red.svg") no-repeat center;
 }
 

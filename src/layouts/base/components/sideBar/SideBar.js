@@ -2,9 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-import done_logo from "./done_gray.svg"
-import todo_logo from "./todo_gray.svg"
-
 import './style.css';
 
 export default class SideBar extends React.Component {

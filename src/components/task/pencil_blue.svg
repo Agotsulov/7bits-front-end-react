@@ -1,0 +1,12 @@
+<svg id="pencil" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4a90e2;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Path_3" data-name="Path 3" class="cls-1" d="M9,2.012L11.957,5,14,3.011,11.018,0Z"/>
+  <path id="Path_2" data-name="Path 2" class="cls-1" d="M0,14H2.871L11,5.849,8.173,3,0,10.957V14Z"/>
+</svg>
