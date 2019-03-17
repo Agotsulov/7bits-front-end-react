@@ -13,18 +13,43 @@
     font-size: 15px;
     color: #303030;
     vertical-align: middle;
-    margin-left: 35px;
+    margin-left: 10px;
 }
 
-.task__button-delete {
+.task:hover {
+    box-shadow: 0 1px 4px #97e3cc;
+}
+
+.task__delete {
     width: 14px;
     height: 14px;
-    margin-left: auto;
     margin-right: 20px;
     background: url("./delete.svg") no-repeat center;
 }
 
-.task__button-delete:hover {
+.task__delete:hover {
     background: url("./delete_red.svg") no-repeat center;
 }
 
+.task__pencil {
+    width: 14px;
+    height: 14px;
+    margin-left: auto;
+    margin-right: 24px;
+    background: url("./pencil.svg") no-repeat center;
+}
+
+.task__pencil:hover {
+    background: url("./pencil_blue.svg") no-repeat center;
+}
+
+.task__circle {
+    width: 14px;
+    height: 14px;
+    margin-left: 10px;
+    background: url("./О.svg") no-repeat center;
+}
+
+.task__circle:hover {
+    background-image: url("О_hover.svg");
+}

@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-import pencil_gray from './pencil.svg'
-import delete_gray from './delete.svg'
-
 export default class Task extends React.Component {
   state = {
     hover: false
@@ -24,8 +21,10 @@ export default class Task extends React.Component {
     }
     return (
       <article className="task" onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
+        <div className="task__circle"/>
         <p className="task__title">{this.props.title}</p>
-        <div className="task__button-delete" style={linkStyle}/>
+        <div className="task__pencil" style={linkStyle}/>
+        <div className="task__delete" style={linkStyle}/>
       </article>
     );
   };
