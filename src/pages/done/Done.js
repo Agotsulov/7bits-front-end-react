@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Task from '../../components/task/Task';
+import Task from '../../components/task/TaskDone';
 
 import list from './list';
 
