@@ -44,7 +44,8 @@ export default class AddTask extends React.Component {
                 />
                 <input
                     className={linkClassName}
-                    type="button"
+                    type="submit"
+                    onClick={this.onSubmit}
                 />
             </form>
             );
