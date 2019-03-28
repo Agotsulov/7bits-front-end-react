@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141 41" width="141" height="41">
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="M-584 -790L716 -790L716 510L-584 510Z" />
+		</clipPath>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #bdbdbd } 
+		.txt1 { font-size: 15px;fill: #ffffff;font-family: "Roboto";font-weight: 500 } 
+		.shp2 { fill: #ffffff;stroke: #ffffff;stroke-width: 0.5 } 
+	</style>
+	<g id="UI kit" clip-path="url(#cp1)">
+		<g id="UI kit">
+			<g id="form_new task">
+				<g id="new task_empty">
+					<g id="button create unavailable">
+						<path id="Rectangle" class="shp0" d="M5,19c0,8.28 6.72,15 15,15h100c8.28,0 15,-6.72 15,-15c0,-8.28 -6.72,-15 -15,-15h-100c-8.28,0 -15,6.72 -15,15z" />
+						<g id="Group 2">
+							<text id="Create" style="transform: matrix(1,0,0,1,53,24)" >
+								<tspan x="0" y="0" class="txt1">Create</tspan>
+							</text>
+							<path id="Shape" class="shp2" d="M39,20.29v-1.57h-4.71v-4.71h-1.57v4.71h-4.71v1.57h4.71v4.71h1.57v-4.71z" />
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

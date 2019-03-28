@@ -1,12 +1,31 @@
 import React from 'react';
 
 import Task from '../../components/task/TaskToDo';
+import AddTask from '../../components/add/Add';
 
 import list from './list';
 
 import './style.css';
 
 export default class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tasks: [...list.data]
+    };
+  }
+
+  uuid = require('uuid/v4');
+
+  addTask = (title) => {
+    if (title !== "") {
+      const newTask = {
+        id: this.uuid(),
+        title: title
+      };
+      this.setState({ tasks: [newTask, ...this.state.tasks]})
+    }
+  };
 
   deleteTask = (id) => {
       console.log("delete" + id)
@@ -21,7 +40,8 @@ export default class ToDo extends React.Component {
   };
 
   renderList = () => {
-    return list.data.map((item, index) => {
+    console.log(this.state.tasks);
+    return this.state.tasks.map((item, index) => {
       return (
         <Task key={index}
               title={item.title}
@@ -37,6 +57,7 @@ export default class ToDo extends React.Component {
   render() {
     return (
       <React.Fragment>
+          <AddTask addTask={this.addTask}/>
         {this.renderList()}
       </React.Fragment>
     );

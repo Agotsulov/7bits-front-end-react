@@ -1,0 +1,36 @@
+
+.add__input {
+    border: none;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    display: inline-flex;
+    color: #353535;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    border-bottom: 2px solid #45d3a8;
+}
+
+.add__input:focus {
+    outline: none;
+    color: #353535;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+}
+
+.add__submit {
+    width: 135px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: url("./button_create_unavailable.svg") no-repeat center;
+}
+
+.add__submit-focus {
+    width: 135px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: url("./button_create.svg") no-repeat center;
+}

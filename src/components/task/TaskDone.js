@@ -35,7 +35,7 @@ export default class TaskDone extends React.Component {
 TaskDone.propTypes = {
   title: PropTypes.string,
   id: PropTypes.string,
-  deleteTask: PropTypes.object.isRequired
+  deleteTask: PropTypes.func
 };
 
 TaskDone.defaultProps = {

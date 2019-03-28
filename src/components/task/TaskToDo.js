@@ -46,9 +46,9 @@ export default class Task extends React.Component {
 Task.propTypes = {
   title: PropTypes.string,
   id: PropTypes.string,
-  deleteTask: PropTypes.object.isRequired,
-  editTask: PropTypes.object.isRequired,
-  completeTask: PropTypes.object.isRequired
+  deleteTask: PropTypes.func,
+  editTask: PropTypes.func,
+  completeTask: PropTypes.func
 };
 
 Task.defaultProps = {
