@@ -4,9 +4,11 @@ import Task from '../../components/task/TaskDone';
 
 import list from './list';
 
+import { connect } from 'react-redux';
+
 import './style.css';
 
-export default class Done extends React.Component {
+class Done extends React.Component {
 
   deleteTask = (id) => {
     console.log("delete" + id)
@@ -31,3 +33,5 @@ export default class Done extends React.Component {
     );
   };
 };
+
+export default connect(null, null)(Done);

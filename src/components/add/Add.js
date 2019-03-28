@@ -42,9 +42,8 @@ export default class AddTask extends React.Component {
                     onFocus={this.onFocus.bind(this)}
                     onBlur={this.onFocus.bind(this)}
                 />
-                <input
+                <button
                     className={linkClassName}
-                    type="submit"
                     onClick={this.onSubmit}
                 />
             </form>

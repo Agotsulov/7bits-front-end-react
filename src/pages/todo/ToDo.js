@@ -7,7 +7,12 @@ import list from './list';
 
 import './style.css';
 
-export default class ToDo extends React.Component {
+import { createStore } from 'redux';
+import { connect } from 'react-redux';
+
+const store = createStore(() => {});
+
+class ToDo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,3 +68,7 @@ export default class ToDo extends React.Component {
     );
   };
 };
+
+export default connect(null, null)(ToDo);
+
+
