@@ -23,7 +23,10 @@ export default class TaskDone extends React.Component {
       <article className="task" onMouseEnter={this.toggleHover.bind(this)} onMouseLeave={this.toggleHover.bind(this)}>
         <div className="task__check"/>
         <p className="task__title">{this.props.title}</p>
-        <div className="task__delete task__left-element" style={linkStyle}/>
+        <button className="task__button task__delete task__left-element"
+                style={linkStyle}
+                onClick={this.props.deleteTask.bind(this, this.props.id)}
+        />
       </article>
     );
   };
@@ -31,10 +34,11 @@ export default class TaskDone extends React.Component {
 
 TaskDone.propTypes = {
   title: PropTypes.string,
-  pages: PropTypes.string
+  id: PropTypes.string,
+  deleteTask: PropTypes.object.isRequired
 };
 
 TaskDone.defaultProps = {
   title: '',
-  pages: 'ToDo'
+  id: ''
 };

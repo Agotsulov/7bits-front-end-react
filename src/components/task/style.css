@@ -20,9 +20,17 @@
     box-shadow: 0 1px 4px #97e3cc;
 }
 
-.task__delete {
+.task__button {
     width: 14px;
     height: 14px;
+    border: none;
+}
+
+.task__button:focus {
+    outline: none;
+}
+
+.task__delete {
     margin-right: 20px;
     background: url("delete.svg") no-repeat center;
 }
@@ -32,8 +40,6 @@
 }
 
 .task__pencil {
-    width: 14px;
-    height: 14px;
     margin-right: 20px;
     background: url("pencil.svg") no-repeat center;
 }
@@ -50,8 +56,6 @@
 }
 
 .task__circle {
-    width: 14px;
-    height: 14px;
     margin-left: 10px;
     background: url("О.svg") no-repeat center;
 }
