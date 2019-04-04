@@ -25,9 +25,9 @@ export default class AddTask extends React.Component {
     render() {
       let linkClassName;
       if (this.state.focus) {
-        linkClassName = "add__submit-focus"
+        linkClassName = "add__submit add__submit-focus"
       } else {
-        linkClassName = "add__submit"
+        linkClassName = "add__submit add__submit-none-focus"
       }
       return (
             <form className="add__form"
@@ -45,7 +45,9 @@ export default class AddTask extends React.Component {
                 <button
                     className={linkClassName}
                     onClick={this.onSubmit}
-                />
+                >
+                  Create
+                </button>
             </form>
             );
     };
