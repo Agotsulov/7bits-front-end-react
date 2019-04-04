@@ -18,17 +18,7 @@ export default class AddTask extends React.Component {
 
     onChange = (e) => this.setState({ title: e.target.value });
 
-    onFocus = () => {
-      this.setState({focus: !this.state.focus})
-    };
-
     render() {
-      let linkClassName;
-      if (this.state.focus) {
-        linkClassName = "add__submit add__submit-focus"
-      } else {
-        linkClassName = "add__submit add__submit-none-focus"
-      }
       return (
             <form className="add__form"
                 onSubmit={this.onSubmit}
@@ -39,11 +29,10 @@ export default class AddTask extends React.Component {
                     placeholder="Type your new task"
                     value={this.state.title}
                     onChange={this.onChange.bind(this)}
-                    onFocus={this.onFocus.bind(this)}
-                    onBlur={this.onFocus.bind(this)}
                 />
                 <button
-                    className={linkClassName}
+                    className="add__submit"
+                    disabled={!this.state.title}
                     onClick={this.onSubmit}
                 >
                   Create

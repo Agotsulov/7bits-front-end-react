@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
 
-import thunk from 'redux-thunk';
+import store from './store/store';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -13,9 +12,6 @@ import ToDo from './pages/todo/ToDo';
 import Done from './pages/done/Done';
 
 import './index.css';
-
-const store = createStore(() => {},
-    applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store}>

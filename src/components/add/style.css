@@ -29,12 +29,9 @@
     font-family: Roboto, sans-serif;
     font-weight: 500;
     background: url("./button_cross.svg") no-repeat 12%;
-}
-
-.add__submit-none-focus {
-    background-color: #bdbdbd;
-}
-
-.add__submit-focus {
     background-color: #50d5ad;
+}
+
+.add__submit:disabled {
+    background-color: #bdbdbd;
 }

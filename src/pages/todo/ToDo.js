@@ -3,21 +3,29 @@ import React from 'react';
 import Task from '../../components/task/TaskToDo';
 import AddTask from '../../components/add/Add';
 
-import list from './list';
-
 import './style.css';
 
-import { createStore } from 'redux';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-const store = createStore(() => {});
+import getTodoTaskList from "../../actions/taskList/getTodoTaskList";
 
 class ToDo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: [...list.data]
+      tasks: []
     };
+  }
+
+  componentDidMount() {
+    this.props.getTodoTaskList();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.doneList !== this.props.doneList) {
+      this.setState({tasks: [...this.props.doneList]})
+    }
   }
 
   uuid = require('uuid/v4');
@@ -67,8 +75,14 @@ class ToDo extends React.Component {
       </React.Fragment>
     );
   };
-};
+}
 
-export default connect(null, null)(ToDo);
+const mapDispatchToProps = (dispatch) => ({
+  getTodoTaskList: bindActionCreators(getTodoTaskList, dispatch)
+});
 
+const mapStateToProps = (state) => ({
+  doneList: state.todoTaskListReducer.todoList
+});
 
+export default connect(mapStateToProps, mapDispatchToProps)(ToDo);
