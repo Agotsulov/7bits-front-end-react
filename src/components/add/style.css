@@ -20,17 +20,21 @@
 }
 
 .add__submit {
-    width: 135px;
-    height: 50px;
+    padding: 8px 50px 8px 50px;
     border: none;
     outline: none;
-    background: url("./button_create_unavailable.svg") no-repeat center;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    background: url("./button_cross.svg") no-repeat 12%;
+}
+
+.add__submit-none-focus {
+    background-color: #bdbdbd;
 }
 
 .add__submit-focus {
-    width: 135px;
-    height: 50px;
-    border: none;
-    outline: none;
-    background: url("./button_create.svg") no-repeat center;
+    background-color: #50d5ad;
 }
