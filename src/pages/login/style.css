@@ -1,0 +1,28 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.login-form__field {
+    max-width: 300px;
+    margin-bottom: 25px;
+    border: none;
+    outline: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #626262;
+}
+
+.login-form__button {
+    padding: 8px 70px 8px 70px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    background-color: #74bbfd;
+}

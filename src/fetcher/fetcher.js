@@ -19,3 +19,22 @@ export function get(url) {
         return error;
       });
 }
+
+export function post(url, data) {
+  const token = localStorage.getItem('token');
+
+  return fetch(url, {
+    method: 'POST',
+    headers: new Headers({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }),
+    body: JSON.stringify(data || {})
+  })
+      .then((response) => checkStatus(response))
+      .then((response) => response.json())
+      .catch((error) => {
+        throw error;
+      });
+}
