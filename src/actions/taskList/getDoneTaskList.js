@@ -4,11 +4,12 @@ import * as types from './actionTypes';
 
 export default function getDoneTaskList() {
   return (dispatch) => {
-    return get('mockapi/getDoneTaskList.json')
+    return get('api/tasks?status=done')
         .then(response => {
+          console.log(response);
           dispatch({
             type: types.GET_ITEM_LIST_SUCCESS,
-            doneList: response.data
+            doneList: response.tasks
           });
         })
         .catch(error => {

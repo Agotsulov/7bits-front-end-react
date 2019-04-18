@@ -12,6 +12,9 @@ import './style.css';
 class Done extends React.Component {
 
   componentDidMount() {
+    if (!this.props.authorized) {
+      this.props.history.replace('/login');
+    }
     this.props.getTaskList();
   }
 
@@ -23,7 +26,7 @@ class Done extends React.Component {
     return this.props.doneList.map((item, index) => {
       return (
         <Task key={index}
-              title={item.title}
+              title={item.text}
               id={item.id}
               deleteTask={this.deleteTask}/>
       );
@@ -44,7 +47,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-  doneList: state.doneTaskListReducer.doneList
+  doneList: state.doneTaskListReducer.doneList,
+  authorized: state.userReducer.authorized
 });
 
 Done.defaultProps = {

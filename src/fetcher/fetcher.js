@@ -6,11 +6,14 @@ function checkStatus(response) {
 }
 
 export function get(url) {
+  const token = localStorage.getItem('token');
+
   return fetch(url, {
     method: 'GET',
     headers: new Headers({
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
     })
   })
       .then((response) => checkStatus(response))

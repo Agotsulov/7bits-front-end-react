@@ -19,6 +19,9 @@ class ToDo extends React.Component {
   }
 
   componentDidMount() {
+    if (!this.props.authorized) {
+      this.props.history.replace('/login');
+    }
     this.props.getTodoTaskList();
   }
 
@@ -34,7 +37,7 @@ class ToDo extends React.Component {
     if (title !== "") {
       const newTask = {
         id: this.uuid(),
-        title: title
+        text: title
       };
       this.setState({ tasks: [newTask, ...this.state.tasks]})
     }
@@ -57,7 +60,7 @@ class ToDo extends React.Component {
     return this.state.tasks.map((item, index) => {
       return (
         <Task key={index}
-              title={item.title}
+              title={item.text}
               id={item.id}
               deleteTask={this.deleteTask}
               editTask={this.editTask}
@@ -82,7 +85,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-  doneList: state.todoTaskListReducer.todoList
+  doneList: state.todoTaskListReducer.todoList,
+  authorized: state.userReducer.authorized
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToDo);
