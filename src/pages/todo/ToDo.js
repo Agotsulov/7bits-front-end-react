@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Task from '../../components/task/TaskToDo';
+import TaskEdit from '../../components/task/TaskEdit';
 import AddTask from '../../components/add/Add';
 
 import './style.css';
@@ -20,7 +21,7 @@ class ToDo extends React.Component {
     super(props);
     this.state = {
       tasks: [],
-      location: ''
+      editId: ''
     };
   }
 
@@ -55,7 +56,14 @@ class ToDo extends React.Component {
   };
 
   editTask = (id) => {
-    console.log("edit" + id)
+    this.setState({editId: id})
+  };
+
+  changeTaskText = (id, text) => {
+    this.setState({editId: ''});
+    this.props.patchTask(id, text).then(
+        () => this.props.getTodoTaskList()
+    )
   };
 
   completeTask = (id) => {
@@ -68,16 +76,28 @@ class ToDo extends React.Component {
   };
 
   renderList = () => {
+    console.log(this.state.editId);
     return this.state.tasks.map((item, index) => {
-      return (
-        <Task key={index}
-              title={item.text}
-              id={item.id}
-              deleteTask={this.deleteTask}
-              editTask={this.editTask}
-              completeTask={this.completeTask}
-        />
-      );
+      if (item.id !== this.state.editId) {
+        return (
+          <Task key={index}
+                title={item.text}
+                id={item.id}
+                deleteTask={this.deleteTask}
+                editTask={this.editTask}
+                completeTask={this.completeTask}
+          />
+        );
+      } else {
+        console.log("OOOOOOOOOOOOOOOOOOO");
+        return (
+            <TaskEdit key={index}
+                  title={item.text}
+                  id={item.id}
+                  changeTaskText={this.changeTaskText}
+            />
+        );
+      }
     });
   };
 

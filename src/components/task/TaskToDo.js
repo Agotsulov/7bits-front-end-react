@@ -8,8 +8,12 @@ export default class Task extends React.Component {
     hover: false
   };
 
-  toggleHover(){
-    this.setState({hover: !this.state.hover})
+  toggleHoverVisible() {
+    this.setState({hover: true})
+  }
+
+  toggleHoverHidden() {
+    this.setState({hover: false})
   }
 
   render() {
@@ -21,8 +25,8 @@ export default class Task extends React.Component {
     }
     return (
       <article className="task"
-               onMouseEnter={this.toggleHover.bind(this)}
-               onMouseLeave={this.toggleHover.bind(this)}
+               onMouseOver={this.toggleHoverVisible.bind(this)}
+               onMouseLeave={this.toggleHoverHidden.bind(this)}
       >
         <button className="task__button task__circle"
                 onClick={this.props.completeTask.bind(this, this.props.id)}
