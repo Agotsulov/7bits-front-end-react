@@ -41,3 +41,59 @@ export function post(url, data) {
         throw error;
       });
 }
+
+export function postNoContent(url, data) {
+  const token = localStorage.getItem('token');
+
+  return fetch(url, {
+    method: 'POST',
+    headers: new Headers({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }),
+    body: JSON.stringify(data || {})
+  })
+      .then((response) => checkStatus(response))
+      .catch((error) => {
+        throw error;
+      });
+}
+
+
+
+export function patch(url, data) {
+  const token = localStorage.getItem('token');
+
+  return fetch(url, {
+    method: 'PATCH',
+    headers: new Headers({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }),
+    body: JSON.stringify(data || {})
+  })
+      .then((response) => checkStatus(response))
+      .catch((error) => {
+        return error;
+      });
+}
+
+
+export function del(url) {
+  const token = localStorage.getItem('token');
+
+  return fetch(url, {
+    method: 'DELETE',
+    headers: new Headers({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    })
+  })
+      .then((response) => checkStatus(response))
+      .catch((error) => {
+        return error;
+      });
+}

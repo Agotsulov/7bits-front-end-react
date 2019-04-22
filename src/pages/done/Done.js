@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import getDoneTaskList from '../../actions/taskList/getDoneTaskList';
+import delTask from "../../actions/task/deleteTask";
 
 import './style.css';
 
@@ -19,7 +20,9 @@ class Done extends React.Component {
   }
 
   deleteTask = (id) => {
-    console.log("delete" + id)
+    this.props.delTask(id).then(
+        () => this.props.getTaskList()
+    );
   };
 
   renderList = () => {
@@ -43,6 +46,7 @@ class Done extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
+  delTask: bindActionCreators(delTask, dispatch),
   getTaskList: bindActionCreators(getDoneTaskList, dispatch)
 });
 

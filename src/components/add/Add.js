@@ -13,7 +13,6 @@ export default class AddTask extends React.Component {
       e.preventDefault();
       this.props.addTask(this.state.title);
       this.setState({ title: '' });
-      console.log("Submit ")
     };
 
     onChange = (e) => this.setState({ title: e.target.value });
