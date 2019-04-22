@@ -84,4 +84,9 @@
     height: 14px;
     margin-right: 20px;
     background: url("edit_task_green.png") no-repeat center;
+    /*
+     * В макете зеленый сделан старнно и скачать его как SVG неполучается.
+     * И я не понял как именно в это SVG цвет задать.
+     * И в раздатке его тоже нет.
+     */
 }
