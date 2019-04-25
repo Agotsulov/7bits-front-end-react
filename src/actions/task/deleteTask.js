@@ -6,7 +6,6 @@ export default function delTask(id) {
   return (dispatch) => {
     return del('api/tasks/' + id)
         .catch(error => {
-          console.log(error);
           dispatch({
             type: types.ERROR,
             error: error

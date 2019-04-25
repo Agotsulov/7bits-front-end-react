@@ -56,11 +56,24 @@ export function postNoContent(url, data) {
   })
       .then((response) => checkStatus(response))
       .catch((error) => {
-        throw error;
+        return error;
       });
 }
 
-
+export function postNoContentNoAuth(url, data) {
+  return fetch(url, {
+    method: 'POST',
+    headers: new Headers({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }),
+    body: JSON.stringify(data || {})
+  })
+      .then((response) => checkStatus(response))
+      .catch((error) => {
+        throw error;
+      });
+}
 
 export function patch(url, data) {
   const token = localStorage.getItem('token');

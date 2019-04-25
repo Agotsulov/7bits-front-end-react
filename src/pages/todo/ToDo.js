@@ -38,12 +38,12 @@ class ToDo extends React.Component {
     }
   }
 
-  uuid = require('uuid/v4');
-
   addTask = (title) => {
     this.props.addTask(title).then(
         () => this.props.getTodoTaskList() //Как вернуть Header из ответа на запрос создание? У меня через reducer не получилось.
-    ); // + еще в backend'е возвращяется строка /tasks/{id}. Это не удобно.
+    ).then( () => {// + еще в backend'е возвращяется строка /tasks/{id}. Это не удобно.
+      console.log(this.props.location)
+    });
   };
 
   deleteTask = (id) => {
@@ -76,7 +76,6 @@ class ToDo extends React.Component {
   };
 
   renderList = () => {
-    console.log(this.state.editId);
     return this.state.tasks.map((item, index) => {
       if (item.id !== this.state.editId) {
         return (
@@ -89,7 +88,6 @@ class ToDo extends React.Component {
           />
         );
       } else {
-        console.log("OOOOOOOOOOOOOOOOOOO");
         return (
             <TaskEdit key={index}
                   title={item.text}
@@ -121,7 +119,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   doneList: state.todoTaskListReducer.todoList,
-  authorized: state.userReducer.authorized
+  authorized: state.userReducer.authorized,
+  location: state.taskReducer.location
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToDo);

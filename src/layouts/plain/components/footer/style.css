@@ -1,0 +1,10 @@
+
+
+.footer__image {
+    height: 186px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background: url("./BG.png") no-repeat bottom;
+}

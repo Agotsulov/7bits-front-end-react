@@ -13,6 +13,7 @@ import Plain from './layouts/plain/Plain';
 import ToDo from './pages/todo/ToDo';
 import Done from './pages/done/Done';
 import Login from './pages/login/Login';
+import SignUp from './pages/signup/SignUp';
 
 import './index.css';
 
@@ -20,6 +21,11 @@ ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
+          <Route path='/signup' render={() => (
+              <Plain>
+                <Route exact path='/signup' component={SignUp} />
+              </Plain>
+          )}/>
           <Route path='/login' render={() => (
               <Plain>
                 <Route exact path='/login' component={Login} />

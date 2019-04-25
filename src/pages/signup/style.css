@@ -1,0 +1,47 @@
+
+.signup__agree {
+    text-align: left;
+    width: 250px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+.signup__checkbox[type="checkbox"] {
+    display: none;
+}
+
+.checker {
+    float: left;
+    width: 13px;
+    height: 13px;
+    border-radius: 0;
+    border: 0;
+    background: url("./checkbox_gray.png") no-repeat center;
+}
+
+.signup__checkbox[type="checkbox"]:checked + .checker {
+    background: url("./checkbox_blue.png") no-repeat center;
+}
+
+.signup__text {
+    font-size: 13px;
+    color: #bdbdbd;
+    font-family: Roboto, serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.signup__text:checked {
+    color: #353535;
+}
+
+.signup__text-href {
+    text-decoration: none;
+    color: #626262;
+    font-weight: 500;
+}
+
+.signup__text-acc {
+    color: #878787;
+}

@@ -7,11 +7,23 @@
 }
 
 .login-form__field {
-    max-width: 300px;
+    max-width: 250px;
+    width: 250px;
     margin-bottom: 25px;
     border: none;
     outline: none;
+    color: black;
     padding-bottom: 5px;
+    border-bottom: 1px solid #626262;
+}
+
+.login-form__field-red {
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+.login-form__field-black {
+    color: black;
     border-bottom: 1px solid #626262;
 }
 
@@ -22,7 +34,14 @@
     border-radius: 25px;
     font-size: 16px;
     color: #ffffff;
+    cursor: pointer;
     font-family: Roboto, sans-serif;
     font-weight: 500;
     background-color: #74bbfd;
 }
+
+.login-form__button:disabled {
+    cursor: default;
+    background-color: #bdbdbd;
+}
+
