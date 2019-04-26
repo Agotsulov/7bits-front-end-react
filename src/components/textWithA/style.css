@@ -1,0 +1,18 @@
+
+.twa {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.twa__text {
+    font-size: 13px;
+    color: #878787;
+    font-family: Roboto, serif;
+    font-weight: 400;
+}
+
+.twa__text-href {
+    text-decoration: none;
+    color: #626262;
+    font-weight: 500;
+}

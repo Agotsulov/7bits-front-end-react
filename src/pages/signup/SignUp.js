@@ -2,9 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import signup from '../../actions/user/signup';
+
 
 import './style.css';
+import '../style.css';
+
+import signup from '../../actions/user/signup';
+
+import TextWithA from '../../components/textWithA/textWithA';
+import LoginAndPassword from '../../components/loginAndPassword/loginAndPassword';
 
 class Login extends React.Component {
   state = {
@@ -26,73 +32,64 @@ class Login extends React.Component {
 
   onClickAgree = () => this.setState({ agree: !this.state.agree });
 
-  changeError = () => this.setState({ error: !this.state.error });
-
   checkFields = () => ((this.state.agree) && (!!this.state.password) && (!!this.state.username));
 
   handleSubmit = (event) => {
     event.preventDefault();
     if (this.checkFields()) {
-      this.props.signup(this.state.username, this.state.password);
-    }
-    if (this.props.error === null) {
-      this.changeError();
+      this.props.signup(this.state.username, this.state.password).then(
+          () => {
+            console.log(this.props.error);
+            if (this.props.error !== null) {
+              this.setState({ error: true })
+            } else {
+              this.props.history.replace('/login');
+            }
+          }
+      );
     }
   };
 
   render() {
     let linkClass;
-    if (this.state.error) {
-      linkClass = 'login-form__field-red';
+    let textClass;
+    if (!this.state.agree) {
+      linkClass = 'checkbox-disabled';
+      textClass = 'checkbox__text-gray';
     } else {
-      linkClass = 'login-form__field-black';
+      linkClass = 'checkbox-checked';
+      textClass = 'checkbox__text-black';
     }
-    let className = `login-form__field ${linkClass}`;
+
+    let checkboxClassName = `checkbox ${linkClass}`;
+    let textClassName = `checkbox__text ${textClass}`;
+    
     return (
         <form
-            className='login-form'
+            className='form'
             onSubmit={this.handleSubmit}
         >
-          <input
-              className={className}
-              name='login'
-              placeholder='Login'
-              value={this.state.username}
-              onChange={this.onChangeUsername}
+          <LoginAndPassword
+            error={this.state.error}
+            username={this.state.username}
+            password={this.state.password}
+            onChangeUsername={this.onChangeUsername}
+            onChangePassword={this.onChangePassword}
           />
-          <input
-              className={className}
-              name='password'
-              placeholder='Password'
-              type='password'
-              value={this.state.password}
-              onChange={this.onChangePassword}
-          />
-          <div className='signup__agree'>
-            <input
-                className='signup__checkbox'
-                name='agree'
-                type='checkbox'
-                checked={this.state.agree}
-                onChange={this.onClickAgree}
-            /><span className='checker'/>
-            <div className='signup__text'>
+          <div className='checkbox-pic-with-text'>
+            <div className={checkboxClassName} onClick={this.onClickAgree}/>
+            <div className={textClassName}>
               I agree to processing of personal data
             </div>
           </div>
           <button
-              className='login-form__button'
+              className='form__button signup__button'
               type='submit'
               disabled={!((this.state.agree) && (!!this.state.password) && (!!this.state.username))}
           >
             Sign up
           </button>
-          <div className='signup__text signup__text-acc'>
-            Have an account
-          </div>
-          <a className='signup__text signup__text-href' href='/login'>
-            Log in
-          </a>
+          <TextWithA text='Have an account' atext='Log in' href='/login'/>
         </form>
     );
   };

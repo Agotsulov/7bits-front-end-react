@@ -1,0 +1,20 @@
+.lap__field {
+    max-width: 250px;
+    width: 250px;
+    margin-bottom: 25px;
+    border: none;
+    outline: none;
+    color: black;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #626262;
+}
+
+.lap__field-red {
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+.lap_field-black {
+    color: black;
+    border-bottom: 1px solid #626262;
+}

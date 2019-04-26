@@ -5,8 +5,18 @@ import { bindActionCreators } from 'redux';
 import login from '../../actions/user/login';
 
 import './style.css';
+import '../style.css';
+
+import TextWithA from '../../components/textWithA/textWithA';
+import LoginAndPassword from '../../components/loginAndPassword/loginAndPassword';
+
 
 class Login extends React.Component {
+  state = {
+    username: "",
+    password: "",
+  };
+
   componentDidMount() {
     if (this.props.authorized) {
       this.props.history.replace('/');
@@ -19,39 +29,46 @@ class Login extends React.Component {
     }
   }
 
+  onChangeUsername = (e) => this.setState({ username: e.target.value });
+
+  onChangePassword = (e) => this.setState({ password: e.target.value });
+
+  checkFields = () => ((!!this.state.password) && (!!this.state.username));
+
   handleSubmit = (event) => {
     event.preventDefault();
-
-    const username = event.target['login'].value;
-    const password = event.target['password'].value;
-
-    this.props.login(username, password);
-
+    if (this.checkFields()) {
+      this.props.login(this.state.username, this.state.password).then(
+          () => {
+            if (this.props.error !== null) {
+              this.setState({ error: true })
+            }
+          }
+      );
+    }
   };
 
   render() {
     return (
         <form
-            className='login-form'
+            className='form'
             onSubmit={this.handleSubmit}
         >
-          <input
-              className='login-form__field'
-              name='login'
-              placeholder='Login'
-          />
-          <input
-              className='login-form__field'
-              name='password'
-              placeholder='Password'
-              type='password'
+          <LoginAndPassword
+              error={this.state.error}
+              username={this.state.username}
+              password={this.state.password}
+              onChangeUsername={this.onChangeUsername}
+              onChangePassword={this.onChangePassword}
           />
           <button
-              className='login-form__button'
+              className='form__button login__button'
               type='submit'
+              disabled={!((!!this.state.password) && (!!this.state.username))}
           >
             Log in
           </button>
+          <TextWithA text="Don't have account" atext='Sign up' href='/signup'/>
         </form>
     );
   };
