@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-
-
 import './style.css';
 import '../style.css';
 
@@ -63,7 +61,7 @@ class Login extends React.Component {
 
     let checkboxClassName = `checkbox ${linkClass}`;
     let textClassName = `checkbox__text ${textClass}`;
-    
+
     return (
         <form
             className='form'

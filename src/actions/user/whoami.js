@@ -6,7 +6,7 @@ export default function whoami() {
     return get('http://localhost:8080/whoami')
         .then(response => {
           dispatch({
-            type: types.AUTHORIZE_SUCCESS,
+            type: types.WHOAMI_SUCCESS,
             username: response.username
           });
         })

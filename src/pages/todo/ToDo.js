@@ -39,10 +39,13 @@ class ToDo extends React.Component {
   }
 
   addTask = (title) => {
-    this.props.addTask(title).then(
-        () => this.props.getTodoTaskList() //Как вернуть Header из ответа на запрос создание? У меня через reducer не получилось.
-    ).then( () => {// + еще в backend'е возвращяется строка /tasks/{id}. Это не удобно.
-      console.log(this.props.location)
+    this.props.addTask(title).then(() => {// + еще в backend'е возвращяется строка /tasks/{id}. Это не удобно.
+      const newTask = {
+        id: this.props.location.split('/')[2],
+        text: title
+      };
+      console.log(newTask);
+      this.setState({ tasks: [newTask, ...this.state.tasks]})
     });
   };
 
@@ -76,6 +79,7 @@ class ToDo extends React.Component {
   };
 
   renderList = () => {
+    console.log(this.state.tasks);
     return this.state.tasks.map((item, index) => {
       if (item.id !== this.state.editId) {
         return (
