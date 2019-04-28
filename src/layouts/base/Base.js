@@ -19,8 +19,8 @@ export default class Base extends React.Component {
         </main>
       </React.Fragment>
     );
-  };
-};
+  }
+}
 
 Base.propTypes = {
   children: PropTypes.node.isRequired

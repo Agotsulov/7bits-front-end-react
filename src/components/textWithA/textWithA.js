@@ -17,8 +17,8 @@ export default class TextWithA extends React.Component {
           </div>
         </React.Fragment>
     );
-  };
-};
+  }
+}
 
 TextWithA.propTypes = {
   text: PropTypes.string,

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { I18n } from 'react-redux-i18n';
 
 import login from '../../actions/user/login';
 
@@ -66,12 +67,13 @@ class Login extends React.Component {
               type='submit'
               disabled={!((!!this.state.password) && (!!this.state.username))}
           >
-            Log in
+            {I18n.t("pages.login.button")}
           </button>
-          <TextWithA text="Don't have account" atext='Sign up' href='/signup'/>
+          <TextWithA text={I18n.t("pages.login.dontHaveAccount")}
+                     atext={I18n.t("pages.login.hrefToSignUp")} href='/signup'/>
         </form>
     );
-  };
+  }
 }
 
 const mapDispatchToProps = (dispatch) => ({

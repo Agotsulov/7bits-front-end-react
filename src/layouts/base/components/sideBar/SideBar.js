@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { I18n } from 'react-redux-i18n';
 
 import './style.css';
 
@@ -18,7 +19,9 @@ export default class SideBar extends React.Component {
                       className={'nav-menu__link nav-menu__todo'}
                       activeClassName={'nav-menu__link_active'}
                   >
-                      <div className={'nav-menu__text'}>To Do</div>
+                      <div className={'nav-menu__text'}>
+                        {I18n.t("layouts.base.sideBar.todo")}
+                      </div>
                   </NavLink>
               </li>
               <li className={'nav-menu__item'}>
@@ -27,14 +30,16 @@ export default class SideBar extends React.Component {
                       className={'nav-menu__link nav-menu__done'}
                       activeClassName={'nav-menu__link_active'}
                   >
-                      <div className={'nav-menu__text'}>Done</div>
+                      <div className={'nav-menu__text'}>
+                        {I18n.t("layouts.base.sideBar.done")}
+                      </div>
                   </NavLink>
               </li>
           </ul>
       </aside>
     );
-  };
-};
+  }
+}
 
 SideBar.propTypes = {
   className: PropTypes.string

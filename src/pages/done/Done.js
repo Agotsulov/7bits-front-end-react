@@ -42,7 +42,7 @@ class Done extends React.Component {
         {this.renderList()}
       </React.Fragment>
     );
-  };
+  }
 }
 
 const mapDispatchToProps = (dispatch) => ({

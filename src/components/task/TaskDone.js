@@ -29,8 +29,8 @@ export default class TaskDone extends React.Component {
         />
       </article>
     );
-  };
-};
+  }
+}
 
 TaskDone.propTypes = {
   title: PropTypes.string,

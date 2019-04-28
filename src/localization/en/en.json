@@ -1,0 +1,33 @@
+{
+  "layouts": {
+    "base": {
+      "sideBar": {
+        "todo": "To Do",
+        "done": "Done"
+      }
+    }
+  },
+  "pages": {
+    "login": {
+      "button": "Log in",
+      "dontHaveAccount": "Don't have account",
+      "hrefToSignUp": "Sign up"
+    },
+    "signUp": {
+      "processingPersonalData": "I agree to processing of personal data",
+      "button": "Sign up",
+      "haveAccount": "Have account",
+      "hrefToLogin": "Log in"
+    }
+  },
+  "components": {
+    "loginAndPassword": {
+      "loginPlaceholder": "Login",
+      "passwordPlaceholder": "Password"
+    },
+    "add": {
+      "button": "Create",
+      "placeholder": "Type your new task"
+    }
+  }
+}

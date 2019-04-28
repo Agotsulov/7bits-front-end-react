@@ -6,7 +6,6 @@ export default function getDoneTaskList() {
   return (dispatch) => {
     return get('api/tasks?status=done')
         .then(response => {
-          console.log(response);
           dispatch({
             type: types.GET_ITEM_LIST_SUCCESS,
             doneList: response.tasks

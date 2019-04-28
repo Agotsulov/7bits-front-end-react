@@ -17,8 +17,8 @@ export default class Plain extends React.Component {
           <Footer/>
         </React.Fragment>
     );
-  };
-};
+  }
+}
 
 Plain.propTypes = {
   children: PropTypes.node.isRequired

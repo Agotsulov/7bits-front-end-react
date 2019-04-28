@@ -14,7 +14,6 @@ class Header extends React.Component {
   }
 
   logout () {
-    console.log(this.props);
     localStorage.removeItem('token');
     this.props.history.replace('/');
   }
@@ -30,8 +29,8 @@ class Header extends React.Component {
         </div>
       </header>
     );
-  };
-};
+  }
+}
 
 const mapDispatchToProps = (dispatch) => ({
   whoami: bindActionCreators(whoami, dispatch)

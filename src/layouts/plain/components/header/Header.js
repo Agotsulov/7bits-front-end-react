@@ -10,5 +10,5 @@ export default class Header extends React.Component {
           <img className='logo' src={logo} href='/'/>
         </div>
     );
-  };
-};
+  }
+}

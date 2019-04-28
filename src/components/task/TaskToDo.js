@@ -44,8 +44,8 @@ export default class Task extends React.Component {
         />
       </article>
     );
-  };
-};
+  }
+}
 
 Task.propTypes = {
   title: PropTypes.string,

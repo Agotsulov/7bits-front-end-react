@@ -46,8 +46,8 @@ export default class TaskEdit extends React.Component {
           />
         </form>
     );
-  };
-};
+  }
+}
 
 TaskEdit.propTypes = {
   title: PropTypes.string,

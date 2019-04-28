@@ -7,5 +7,5 @@ export default class Footer extends React.Component {
     return (
         <div className='footer__image'/>
     );
-  };
-};
+  }
+}

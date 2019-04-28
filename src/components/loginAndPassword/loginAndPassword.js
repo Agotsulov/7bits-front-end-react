@@ -32,8 +32,8 @@ export default class LoginAndPassword extends React.Component {
           />
         </React.Fragment>
     );
-  };
-};
+  }
+}
 
 LoginAndPassword.propTypes = {
   error: PropTypes.bool,

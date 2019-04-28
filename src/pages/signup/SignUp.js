@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { I18n } from 'react-redux-i18n';
 
 import './style.css';
 import '../style.css';
@@ -37,7 +38,6 @@ class Login extends React.Component {
     if (this.checkFields()) {
       this.props.signup(this.state.username, this.state.password).then(
           () => {
-            console.log(this.props.error);
             if (this.props.error !== null) {
               this.setState({ error: true })
             } else {
@@ -77,7 +77,7 @@ class Login extends React.Component {
           <div className='checkbox-pic-with-text'>
             <div className={checkboxClassName} onClick={this.onClickAgree}/>
             <div className={textClassName}>
-              I agree to processing of personal data
+              {I18n.t("pages.signUp.processingPersonalData")}
             </div>
           </div>
           <button
@@ -85,12 +85,13 @@ class Login extends React.Component {
               type='submit'
               disabled={!((this.state.agree) && (!!this.state.password) && (!!this.state.username))}
           >
-            Sign up
+            {I18n.t("pages.signUp.button")}
           </button>
-          <TextWithA text='Have an account' atext='Log in' href='/login'/>
+          <TextWithA text={I18n.t("pages.signUp.haveAccount")}
+                     atext={I18n.t("pages.signUp.hrefToLogin")} href='/login'/>
         </form>
     );
-  };
+  }
 }
 
 const mapDispatchToProps = (dispatch) => ({
